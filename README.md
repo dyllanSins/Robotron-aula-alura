@@ -11,11 +11,15 @@ atualizaEstatistica(evento.target.dataset.peca, evento.target.dataset.controle)
 > Adicionei o "evento.target.dataset.controle" ao atualizaEstatistica. E:
 
 ```
-if(operacao === "-"){
-        elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
-    } else{
-        elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
-    }
+function atualizaEstatistica(peca, operacao) {
+    estatisticas.forEach((elemento) => {
+        if(operacao === "-"){
+            elemento.textContent = parseInt(elemento.textContent) - pecas[peca][elemento.dataset.estatistica]
+        } else{
+            elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
+        }
+    })
+}
 ```
 > Adicionei outro parâmentro a função atualizaEstatística e utilizei o if da função anterior
 
